@@ -1,4 +1,4 @@
-{% set version = "1.7.0" %}
+{% set version = "1.8.0" %}
 
 package:
   name: datapackage
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/datapackage/datapackage-{{ version }}.tar.gz
-  sha256: d08e9c21865c99a0bb3f469c36c5fd5c00c7abc391a484494475ecf8773f2405
+  sha256: 7afb4a22910a04eca5ed5aa69ae46b45650ab00cb2648007669f454cc1de7b30
 
 build:
   number: 0
   noarch: python
   entry_points:
     - datapackage = datapackage.cli:cli
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
@@ -28,7 +28,7 @@ requirements:
     - requests >=2.8
     - six >=1.10
     - tableschema >=1.1.0
-    - tabulator >=1.20
+    - tabulator >=1.24.2
     - unicodecsv >=0.14
 
 test:
