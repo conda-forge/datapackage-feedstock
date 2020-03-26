@@ -1,4 +1,4 @@
-{% set version = "1.11.1" %}
+{% set version = "1.12.0" %}
 
 package:
   name: datapackage
@@ -6,14 +6,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/datapackage/datapackage-{{ version }}.tar.gz
-  sha256: c784ea1d84f03cf32501da6f676af528cd42eed32c99f172107766cb2135dbff
+  sha256: b9355d97c13371cebccae1132c48425c65746d69385aa9e718fc7c2d8d21c296
 
 build:
   number: 0
   noarch: python
   entry_points:
     - datapackage = datapackage.cli:cli
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -35,10 +35,12 @@ test:
   imports:
     - datapackage
   commands:
+    - pip check
     - datapackage --help
   requires:
     - pylama
     - tox
+    - pip
 
 about:
   home: https://github.com/frictionlessdata/datapackage-py
