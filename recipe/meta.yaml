@@ -35,10 +35,12 @@ test:
   imports:
     - datapackage
   commands:
+    - pip check
     - datapackage --help
   requires:
     - pylama
     - tox
+    - pip
 
 about:
   home: https://github.com/frictionlessdata/datapackage-py
