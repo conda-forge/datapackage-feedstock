@@ -5,7 +5,7 @@ Home: https://github.com/frictionlessdata/datapackage-py
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Utilities to work with Data Packages as defined on specs.frictionlessdata.io
 
