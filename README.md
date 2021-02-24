@@ -5,11 +5,9 @@ Home: https://github.com/frictionlessdata/datapackage-py
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/datapackage-feedstock/blob/master/LICENSE.txt)
 
 Summary: Utilities to work with Data Packages as defined on specs.frictionlessdata.io
-
-
 
 Current build status
 ====================
