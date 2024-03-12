@@ -1,4 +1,4 @@
-{% set version = "1.15.2" %}
+{% set version = "1.15.4" %}
 
 package:
   name: datapackage
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/d/datapackage/datapackage-{{ version }}.tar.gz
-  sha256: 1e91a18c866914dea0acfe2aec785e6ec583c33766b0682c740b30bb7de88c58
+  sha256: 7fe7c17a58bb5fad903209d4f761199569d33cc45aad6d88213a8d8f7b3f7092
 
 build:
   number: 0
