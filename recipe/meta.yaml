@@ -1,35 +1,36 @@
-{% set version = "1.15.2" %}
+{% set name = "datapackage" %}
+{% set version = "1.15.4" %}
 
 package:
-  name: datapackage
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/d/datapackage/datapackage-{{ version }}.tar.gz
-  sha256: 1e91a18c866914dea0acfe2aec785e6ec583c33766b0682c740b30bb7de88c58
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datapackage-{{ version }}.tar.gz
+  sha256: 7fe7c17a58bb5fad903209d4f761199569d33cc45aad6d88213a8d8f7b3f7092
 
 build:
-  number: 0
-  noarch: python
   entry_points:
-    - datapackage = datapackage.cli:cli
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+    - datapackage = datapackage.__main__:cli
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
-    - python
-    - cchardet >=1.0
-    - click >=6.7
-    - jsonpointer >=1.10
-    - jsonschema >=2.5
-    - requests >=2.8
+    - python >=3.7
     - six >=1.10
-    - tableschema >=1.1.0
-    - tabulator >=1.24.2
+    - click >=6.7
+    - chardet >=3.0
+    - requests >=2.8
+    - jsonschema >=2.5
     - unicodecsv >=0.14
+    - jsonpointer >=1.10
+    - tableschema >=1.20.4
+    - dataflows-tabulator >=1.29
 
 test:
   imports:
